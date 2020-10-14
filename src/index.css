@@ -1,13 +1,130 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  font: 1.6rem Helvetica;
+  height: 100vh;
+  margin: 0;
+}
+.grid-container{
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "main"
+  "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+.header{
+  grid-area: header;
+  background-color: rgb(0, 0, 82);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.brand a{
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.header-links a{
+  color: white;
+  text-decoration: none;
+}
+.header-links a:hover{
+  color: rgb(154, 154, 255);
+}
+.main{
+  grid-area: main;
+}
+.footer{
+  grid-area: footer;
+  background-color: rgba(0, 0, 82, 0.877);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+a{
+  text-decoration: none;
+  color: rgb(0, 0, 92);
+}
+a:hover{
+  color: rgb(0, 0, 255);
+}
+/**Home Screen*/
+.products{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.products li{
+  list-style-type: none;
+  padding: 0;
+  flex: 0 1 34rem;
+  margin: 1rem;
+  height: 50rem;
+  border-bottom: .1rem rgba(0, 0, 255, 0.76) solid;
+}
+.product-img{
+  max-width: 34rem;
+  max-height: 34rem;
+}
+.product-name{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.product-brand{
+  font-size: 1.2rem;
+  color: rgba(0, 0, 32, 0.541);
+}
+.product-price{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.product{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.product-rating{
+  margin-bottom: 0.4rem;
+}
+.brand button{
+  font-size: 3rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.sidebar{
+  position: fixed;
+  transition: all 0.5s ease-in-out;
+  transform: translateX(-30rem);
+  width: 30rem;
+  background-color: rgb(180, 180, 255);
+  height: 100%;
+}
+.sidebar.open{
+  transform: translateX(0)
+}
+.sidebar-close-button{
+  border-radius: 50%;
+  border: 0.1rem black solid;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+  padding-top: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 0.5rem;
+  top: 1.5rem;
 }
